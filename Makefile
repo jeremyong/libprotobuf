@@ -1,4 +1,6 @@
-
+all:
+	./rebar compile
+	dialyzer --no_check_plt ebin/*.beam
 
 test:
 	./rebar compile
@@ -8,4 +10,4 @@ test:
 shell:
 	erl -pz ./ebin -pz deps/triq/ebin
 
-.PHONY: test
+.PHONY: all, test
